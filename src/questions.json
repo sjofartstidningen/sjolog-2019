@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "phrase": "Lighthouse invalt i {gap}",
+      "alternatives": ["EU-plattform", "Kungliga Vetenskapsakademien", "Nato"],
+      "correctAnswer": "EU-plattform",
+      "url": "https://www.sjofartstidningen.se/lighthouse-invalt-eu-plattform/"
+    },
+    {
+      "id": "2",
+      "phrase": "26% av sjömännen visar tecken på {gap}",
+      "alternatives": ["depression", "intelligens", "sjösjuka"],
+      "correctAnswer": "depression",
+      "url": "https://www.sjofartstidningen.se/sjoman-visar-tecken-pa-depression/"
+    },
+    {
+      "id": "3",
+      "phrase": "Stena Line fortsätter satsa på {gap}",
+      "alternatives": ["Danica", "hästar", "Carisma"],
+      "correctAnswer": "Danica",
+      "url": "https://www.sjofartstidningen.se/stena-line-fortsatter-satsa-pa-danica/"
+    },
+    {
+      "id": "4",
+      "phrase": "Tallink utvecklar smarta {gap}",
+      "alternatives": ["bildäck", "sjömän", "vinterdäck"],
+      "correctAnswer": "bildäck",
+      "url": "https://www.sjofartstidningen.se/tallink-utvecklar-smarta-bildack/"
+    },
+    {
+      "id": "5",
+      "phrase": "Klockan klämtar för {gap}",
+      "alternatives": ["idioterna", "kylfartyg", "tjockoljan"],
+      "correctAnswer": "idioterna",
+      "url": "https://www.sjofartstidningen.se/klockan-klamtar-idioterna/"
+    }
+  ]
+}
