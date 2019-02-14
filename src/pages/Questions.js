@@ -14,7 +14,7 @@ const IndicatorsContainer = styled.ul`
   justify-content: space-around;
   margin-top: calc(3rem - 1.6rem);
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #a3a3a3;
   padding-bottom: 1.5rem;
 `;
 
@@ -40,7 +40,7 @@ const Indicator = styled.li`
   ${p =>
     p.state === 'future' &&
     css`
-      color: #e6e6e6;
+      color: #a3a3a3;
     `}
 
   ${p =>
