@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { PageContainer } from '../components/PageContainer.js';
 import { CtaLink } from '../components/CtaLink';
 import { Results } from '../components/Result';
+import { usePersistedState } from '@fransvilhelm/hooks';
+import { addScore } from '../api';
 
 const determineResult = ({ questions, answers }) => {
   return questions.map((question, index) => {
@@ -57,13 +59,30 @@ const Score = styled.p`
   color: #0599e4;
 `;
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const Summary = props => {
+  const [scoreSent, setScoreSent] = usePersistedState(
+    false,
+    isProd ? 'score' : 'score-dev',
+  );
+
   const { questions, answers } = props.location.state;
   if (!answers || !questions) props.location.navigate('/');
 
   const result = determineResult({ questions, answers });
   const score = result.filter(r => r.correct).length;
   const greeting = greetings[score];
+
+  useEffect(() => {
+    if (!scoreSent) {
+      addScore(score)
+        .then(() => {
+          setScoreSent(true);
+        })
+        .catch(() => {});
+    }
+  }, []);
 
   return (
     <PageContainer>

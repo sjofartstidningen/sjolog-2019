@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { mean } from 'ramda';
 import { PageContainer } from '../components/PageContainer';
+import { getScores } from '../api';
 
 const Title = styled.h1`
   max-width: 55rem;
@@ -14,7 +16,7 @@ const Title = styled.h1`
 `;
 
 const Info = styled.p`
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   font-size: 3rem;
   font-family: 'Playfair Display', sans-serif;
   font-weight: 400;
@@ -52,20 +54,30 @@ const PhoneWrapper = styled.div`
 `;
 
 const PhoneText = styled.p`
+  margin-bottom: 1rem;
   font-family: 'Playfair Display', sans-serif;
   font-weight: 400;
   font-size: 1.3vw;
+  line-height: 1;
 `;
 
 const AverageScore = styled.p`
   font-family: 'Playfair Display', sans-serif;
   font-weight: 700;
   font-size: 5vw;
+  line-height: 1;
   color: #0599e4;
 `;
 
 const Preview = () => {
-  const averageScore = 3;
+  const [average, setAverage] = useState(null);
+
+  useEffect(() => {
+    return getScores(scores => {
+      const avg = mean(scores.map(s => s.score).filter(Boolean));
+      setAverage(avg);
+    });
+  }, []);
 
   return (
     <PageContainer>
@@ -77,7 +89,7 @@ const Preview = () => {
 
       <PhoneWrapper>
         <PhoneText>Genomsnittspoäng</PhoneText>
-        <AverageScore>{averageScore.toFixed(1)}</AverageScore>
+        <AverageScore>{average != null && average.toFixed(1)}</AverageScore>
       </PhoneWrapper>
     </PageContainer>
   );

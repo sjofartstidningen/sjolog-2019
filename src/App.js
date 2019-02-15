@@ -13,6 +13,7 @@ const Summary = lazy(() => import('./pages/Summary'));
 const Main = styled.main`
   position: relative;
   min-height: calc(100vh - 5rem /* height of header */);
+  height: auto;
 `;
 
 const App = () => {

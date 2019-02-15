@@ -18,27 +18,14 @@ const LogotypeContainer = styled.div`
   margin-right: 0.8rem;
 `;
 
-const Title = styled.h1`
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 2rem;
-  font-align: center;
-`;
-
-const TitleLink = styled(Link)`
-  color: currentColor;
-  text-decoration: none;
-`;
-
 const Header = () => {
   return (
     <HeaderContainer>
-      <LogotypeContainer>
-        <Logotype />
-      </LogotypeContainer>
-      <Title>
-        <TitleLink to="/">Sjöfartstidningen @ Sjölog 2019</TitleLink>
-      </Title>
+      <Link to="/">
+        <LogotypeContainer>
+          <Logotype />
+        </LogotypeContainer>
+      </Link>
     </HeaderContainer>
   );
 };

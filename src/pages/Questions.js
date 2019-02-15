@@ -14,7 +14,6 @@ const QuestionContainer = styled.div`
   align-items: center;
   flex: 1;
   width: 100%;
-  overflow: scroll;
 `;
 
 const NavigationContainer = styled.div`
