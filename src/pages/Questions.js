@@ -26,7 +26,7 @@ const NavigationContainer = styled.div`
   width: 100%;
 `;
 
-const NavButton = styled.div`
+const NavButton = styled.button`
   position: relative;
   width: 6rem;
   height: 6rem;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Router } from '@reach/router';
 import { Header } from './components/Header';
 import { ErrorBoundry } from './components/ErrorBoundry';
+import { Loader } from './components/Loader';
 
 const Home = lazy(() => import('./pages/Home'));
 const Questions = lazy(() => import('./pages/Questions'));
@@ -20,7 +21,7 @@ const App = () => {
 
       <ErrorBoundry>
         <Main>
-          <Suspense fallback="Loading">
+          <Suspense fallback={<Loader />} maxDuration={300}>
             <Router>
               <Home path="/" />
               <Questions path="questions" />
