@@ -6,6 +6,7 @@ import { ErrorBoundry } from './components/ErrorBoundry';
 import { Loader } from './components/Loader';
 
 const Home = lazy(() => import('./pages/Home'));
+const Preview = lazy(() => import('./pages/Preview'));
 const Questions = lazy(() => import('./pages/Questions'));
 const Summary = lazy(() => import('./pages/Summary'));
 
@@ -24,6 +25,7 @@ const App = () => {
           <Suspense fallback={<Loader />} maxDuration={300}>
             <Router>
               <Home path="/" />
+              <Preview path="preview" />
               <Questions path="questions" />
               <Summary path="summary" />
             </Router>
