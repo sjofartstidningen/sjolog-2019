@@ -9,6 +9,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-content: flex-start;
   padding: 1.6rem;
 `;
 

@@ -1,26 +1,3 @@
-/* Fonts */
-@font-face {
-  font-family: 'PublicoHeadline-Bold';
-  src: url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Bold.eot?')
-      format('eot'),
-    url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Bold.woff')
-      format('woff'),
-    url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Bold.svg#PublicoHeadline-Bold')
-      format('svg');
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'PublicoHeadline-Roman';
-  src: url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Roman.eot?')
-      format('eot'),
-    url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Roman.woff')
-      format('woff'),
-    url('https://www.sjofartstidningen.se/fonts/PublicoHeadline-Roman.svg#PublicoHeadline-Roman')
-      format('svg');
-  font-display: fallback;
-}
-
 /**
  * CSS Reset with credits to
  * [Ire Aderinokun](https://bitsofco.de/my-css-reset-base/)

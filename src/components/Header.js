@@ -19,7 +19,8 @@ const LogotypeContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: 'PublicoHeadline-Bold', serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
   font-size: 2rem;
   font-align: center;
 `;

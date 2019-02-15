@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { update, clamp, length } from 'ramda';
 
-const tap = value => {
-  console.log(value);
-  return value;
-};
-
 const useSteps = (steps, keySuffix = '') => {
   const totalSteps = length(steps);
   const [index, setIndex] = useState(0);
@@ -19,31 +14,16 @@ const useSteps = (steps, keySuffix = '') => {
   const hasPrevious = index > 0;
   const hasAnsweredCurrent = currentAnswer != null;
 
-  const next = () => {
-    setIndex(clamp(0, totalSteps - 1, index + 1));
+  const goToIndex = idx => {
+    setIndex(clamp(0, totalSteps - 1, idx));
   };
 
-  const previous = () => {
-    setIndex(clamp(0, totalSteps - 1, index - 1));
-  };
+  const next = () => goToIndex(index + 1);
+  const previous = () => goToIndex(index - 1);
 
   const setAnswer = answer => {
-    console.log(answer);
-    setAnswers(answers => tap(update(index, answer, answers)));
+    setAnswers(answers => update(index, answer, answers));
   };
-
-  console.log({
-    index,
-    current,
-    currentAnswer,
-    answers,
-    next,
-    previous,
-    setAnswer,
-    hasNext,
-    hasPrevious,
-    hasAnsweredCurrent,
-  });
 
   return {
     index,
@@ -52,6 +32,7 @@ const useSteps = (steps, keySuffix = '') => {
     answers,
     next,
     previous,
+    goToIndex,
     setAnswer,
     hasNext,
     hasPrevious,
