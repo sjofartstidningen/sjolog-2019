@@ -1,0 +1,5 @@
+# Make pushState work
+/*  /index.html  200
+
+# Redirect default Netlify subdomain to primary domain
+https://sjofartstidningen-sjolog.netlify.com/* https://sjolog.sjofartstidningen.se/:splat 301!
