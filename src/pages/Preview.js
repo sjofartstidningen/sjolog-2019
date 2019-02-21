@@ -89,7 +89,9 @@ const Preview = () => {
 
       <PhoneWrapper>
         <PhoneText>Genomsnittspoäng</PhoneText>
-        <AverageScore>{average != null && average.toFixed(1)}</AverageScore>
+        <AverageScore>
+          {average != null && !Number.isNaN(average) ? average.toFixed(1) : '-'}
+        </AverageScore>
       </PhoneWrapper>
     </PageContainer>
   );
