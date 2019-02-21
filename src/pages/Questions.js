@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navigate } from '@reach/router';
 import { useSteps } from '../hooks/use-steps';
 import { questions } from '../questions.json';
 import { PageContainer } from '../components/PageContainer';
@@ -30,6 +29,7 @@ const NavButton = styled.button`
   width: 6rem;
   height: 6rem;
   margin: 1rem;
+  border: none;
   border-radius: 100%;
   color: #ffffff;
   background-color: #0599e4;
@@ -49,7 +49,7 @@ const NavButton = styled.button`
   }
 `;
 
-const Questions = () => {
+const Questions = ({ navigate }) => {
   const {
     index,
     current,
